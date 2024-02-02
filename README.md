@@ -3,8 +3,8 @@
 ## Files description
 1. data.py: Retrieval of data points from the huggingface simple dataset, and writing to a .txt file for cleaning and edits
 2. output.txt: Contains the data to be stored in the vector database
-3. embedding.py: Reads from the output.txt file, embeds the paragraph, and stores the embeddings and the original text into the Pinecone vector database
-4. main.py: Main application where user can enter queries about the Earth, and the most relevant paragraph retrieved based on cosine similarity score will be returned. Query expansion is done on the user's query, where stopwords are removed, and synonyms of the non-stopwords are added. This in theory helps with the retrieval process, as it provides additional semantic information about the query terms, and increases the chances of the query matching relevant paragraphs.
+3. embedding.py: Reads from the output.txt file, embeds the paragraph, and stores the embeddings and the original text into the Pinecone vector database. API key has to be inserted here to update the database
+4. main.py: Main application where user can enter queries about the Earth, and the most relevant paragraph retrieved based on cosine similarity score will be returned. Query expansion is done on the user's query, where stopwords are removed, and synonyms of the non-stopwords are added. This in theory helps with the retrieval process, as it provides additional semantic information about the query terms, and increases the chances of the query matching relevant paragraphs.API key has to be inserted here to query from the database
 <br>
 
 ## How it works:
