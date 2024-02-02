@@ -44,13 +44,21 @@ def query_expansion(query):
 
 def main():
     st.title("Ask questions about the Earth")
+
+    # Input from user
     input_text = st.text_input("Enter your text", "")
 
-
     if st.button("Answer"):
+
+        # Query expansion
         expanded_query = query_expansion(input_text)
+
+        # Embedding of query
         query_embedding = model.encode(expanded_query)
         query_embedding_list = query_embedding.tolist()
+
+        # Retrieve relevant results from database. In this case we will only display
+        # the first result
         results = index.query(vector=query_embedding_list, top_k=15, include_metadata=True)
         st.write(results["matches"][0]["metadata"]["text"])
 
